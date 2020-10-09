@@ -12,7 +12,8 @@ function addEle() {
         if (i == 1) {
             li1.setAttribute("class", 'active')
         }
-
+        li1.title = i;
+        li1.addEventListener("click", clickTo);
         li1.innerHTML = i;
         var a = document.createElement('a');
         var img = document.createElement('img');
@@ -32,29 +33,32 @@ function addEle() {
 setTimeout(() => {
     tomimeat();
 }, 1000)
-
+function clickTo(tar) {
+    num = tar.path[0].title - 2;
+    console.log(tar.path[0].title, num)
+}
+var num = 0;
 function tomimeat() {
+    setInterval(increase, 1500);
+}
+function increase() {
     var ul = document.getElementsByTagName("ul")[0];
     var li = ul.getElementsByTagName("li");
     var ol = document.getElementsByTagName("ol")[0];
     var ol1 = ol.getElementsByTagName("li");
-    console.log(li)
-    var num = 0;
-    setInterval(increase, 1500);
-    function increase() {
-        num++;
-        if (num == li.length) {
-            num = 0;
+    num++;
+    console.log(num, 'num的值')
+    if (num == li.length) {
+        num = 0;
+    }
+    for (let i = 0; i < li.length; i++) {
+        if (i == num) {
+            li[i].setAttribute("style", 'z-index:2')
+            ol1[i].setAttribute("class", 'active')
+        } else {
+            li[i].setAttribute("style", 'z-index:1')
+            ol1[i].setAttribute("class", '')
         }
-        for (let i = 0; i < li.length; i++) {
-            if (i == num) {
-                li[i].setAttribute("style", 'z-index:2')
-                ol1[i].setAttribute("class", 'active')
-            } else {
-                li[i].setAttribute("style", 'z-index:1')
-                ol1[i].setAttribute("class", '')
-            }
 
-        }
     }
 }
