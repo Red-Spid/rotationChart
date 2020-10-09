@@ -35,7 +35,6 @@ setTimeout(() => {
 }, 1000)
 function clickTo(tar) {
     num = tar.path[0].title - 2;
-    console.log(tar.path[0].title, num)
 }
 var num = 0;
 function tomimeat() {
@@ -47,7 +46,6 @@ function increase() {
     var ol = document.getElementsByTagName("ol")[0];
     var ol1 = ol.getElementsByTagName("li");
     num++;
-    console.log(num, 'num的值')
     if (num == li.length) {
         num = 0;
     }
