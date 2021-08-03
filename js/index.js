@@ -17,7 +17,7 @@ function addEle() {
         li1.innerHTML = i;
         var a = document.createElement('a');
         var img = document.createElement('img');
-        img.setAttribute("src", './img/bar' + i + '.jpg')
+        img.setAttribute("src", './img/wzry/' + i + '.jpg')
         a.appendChild(img)
         li.appendChild(a)
         ul.appendChild(li)
